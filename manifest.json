@@ -1,0 +1,11 @@
+{
+  "name": "EnigmaX \u2014 Uncover the Unknown",
+  "short_name": "EnigmaX",
+  "description": "Mysteries, brain challenges and interactive stories.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": []
+}
