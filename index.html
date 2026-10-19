@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="EnigmaX — Discover mysteries, solve cases and challenge your mind.">
+  <title>EnigmaX — Uncover the Unknown</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="EnigmaX Home">
+      <span class="brand-icon">X</span>
+      <span>Enigma<span class="accent">X</span></span>
+    </a>
+    <button id="menuBtn" class="icon-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </header>
+
+  <nav id="navigation" class="navigation">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#cases" class="nav-link">Mysteries</a>
+    <a href="#challenges" class="nav-link">Challenges</a>
+    <a href="#stories" class="nav-link">Storyverse</a>
+    <a href="#about" class="nav-link">About</a>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="eyebrow"><span class="status-dot"></span> YOUR NEXT OBSESSION AWAITS</div>
+      <h1>Uncover the <span class="accent">Unknown.</span></h1>
+      <p>Enter a world of hidden clues, impossible puzzles and stories where every decision matters.</p>
+      <a class="primary-btn" href="#cases">Explore Mysteries <span>↗</span></a>
+      <div class="hero-stats">
+        <div><strong id="solvedCount">0</strong><span>Cases solved</span></div>
+        <div><strong id="pointsCount">0</strong><span>XP earned</span></div>
+        <div><strong id="rankLabel">Rookie</strong><span>Your rank</span></div>
+      </div>
+    </section>
+
+    <section id="cases" class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THINK. INVESTIGATE. SOLVE.</span>
+          <h2>Featured Mysteries</h2>
+        </div>
+        <span class="section-symbol">⌕</span>
+      </div>
+      <div class="card-grid">
+        <article class="game-card mystery-card">
+          <div class="card-art art-one"><span>◈</span><small>CASE 001</small></div>
+          <div class="card-content">
+            <span class="tag">DETECTIVE</span>
+            <h3>The Locked Room</h3>
+            <p>A priceless object vanished from a sealed room. Find the clue everyone missed.</p>
+            <div class="card-footer"><span>◷ 5–10 min</span><button class="text-btn" data-case="locked-room">Investigate ↗</button></div>
+          </div>
+        </article>
+
+        <article class="game-card mystery-card">
+          <div class="card-art art-two"><span>⌘</span><small>CASE 002</small></div>
+          <div class="card-content">
+            <span class="tag purple">LOGIC</span>
+            <h3>The Missing Hour</h3>
+            <p>Three witnesses. Conflicting timelines. Can you reconstruct what happened?</p>
+            <div class="card-footer"><span>◷ 5–10 min</span><button class="text-btn" data-case="missing-hour">Investigate ↗</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="challenges" class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">GIVE YOUR BRAIN A WORKOUT</span>
+          <h2>Mind Challenges</h2>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <button class="feature-card" data-game="sequence">
+          <span class="feature-icon">⟡</span>
+          <strong>Pattern Breaker</strong>
+          <span>Find what comes next.</span>
+        </button>
+        <button class="feature-card" data-game="memory">
+          <span class="feature-icon">▦</span>
+          <strong>Memory Vault</strong>
+          <span>Test your memory.</span>
+        </button>
+        <button class="feature-card" data-game="riddle">
+          <span class="feature-icon">?</span>
+          <strong>Riddle Lab</strong>
+          <span>Crack the hidden answer.</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="stories" class="section story-section">
+      <div>
+        <span class="eyebrow">YOUR CHOICES CHANGE EVERYTHING</span>
+        <h2>Welcome to <span class="accent">Storyverse.</span></h2>
+        <p>Every decision opens a new path. Every ending reveals a different truth.</p>
+        <button class="primary-btn" data-story="midnight">Begin Your Story ↗</button>
+      </div>
+      <div class="story-art" aria-hidden="true"><span>◉</span><span>✳</span><span>◇</span></div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <span class="eyebrow">BEHIND THE MYSTERY</span>
+      <h2>About EnigmaX</h2>
+      <p>EnigmaX is an independent entertainment project built for curious minds. Explore mysteries, challenge yourself and discover stories at your own pace.</p>
+      <div class="credits">
+        <div><span>FOUNDER & DEVELOPER</span><strong>Tahliluzzaman</strong></div>
+        <div><span>AI DEVELOPMENT ASSISTANT</span><strong>ChatGPT</strong></div>
+      </div>
+      <p class="credit-note">Designed by Tahliluzzaman · Built with AI assistance</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#home">Enigma<span class="accent">X</span></a>
+    <p>Uncover the Unknown.</p>
+    <span>© <span id="year">2026</span> EnigmaX</span>
+  </footer>
+
+  <div id="gameModal" class="modal" hidden>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="closeModal" class="icon-btn close-btn" aria-label="Close">✕</button>
+      <span class="eyebrow" id="modalEyebrow">ENIGMAX EXPERIENCE</span>
+      <h2 id="modalTitle">Your next challenge</h2>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
